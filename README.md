@@ -4,7 +4,7 @@ Develop Chat App in node js,Socket.io,Express.
 ## Installation
 Download node.js and install it.
 
-##Initiate the project
+## Initiate the project
 By using npm command, we can initiate our project easily to create a file called package.json. If you wonder what a package.json is, it is a manifest file for the project that will store the project-related information e.g. author name, version, etc.
 You can initiate the project by typing:
 
@@ -12,7 +12,7 @@ You can initiate the project by typing:
 $ npm init
 ```
 
-##Install modules
+## Install modules
 In this project, we are going to use at least two Node.js modules that we can easily install using NPM.
 Express — Express is lightweight web application framework for Node.js. For this simple group chat, it is not necessary to use Express, but if you are planning to continue the development, this is nice to have.
 Socket.io — Socket.io is the key module in this tutorial which enables the realtime communication between the clients and the server.
@@ -29,7 +29,9 @@ and
 ```bash
 $ npm install ejs
 ```
-##Running the program
-Run the program by using
+## Running the program
+Run the program by using'
 
+```bash
 $ npm run devStart
+```
