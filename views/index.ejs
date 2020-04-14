@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Chat App</title>
+  <% include ../views/head %>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body class="container">
+  <header>
+    <% include ../views/header %>
+  </header>
+  <div>&nbsp;</div>
+  <main>
+    <div class="jumbotron">
+      <form action="/room" method="POST">
+        <div class="form-group">
+          <label>Enter Room Name </label>
+          <input type="text" class="form-control" name="room" aria-describedb="roomhelp" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="card bg-light mb-3" style="max-width: 100rem;">
+      <div class="card-header"><b>List of Chat Rooms</b></div>
+      <div class="card-body">
+        <div id="room-container">
+          <table class="table text-center table-borderless">
+            <tbody>
+              <% Object.keys(rooms).forEach(room => { %>
+              <tr>
+                <th scope="row" style="text-transform: uppercase;"><label><%= room %></label></th>
+                <td><a class="btn btn-primary" href="/<%= room %>">Join</a></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <% include ../views/footer %>
+  </footer>
+</body>
+
+</html>

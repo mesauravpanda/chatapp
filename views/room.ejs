@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+  <% include ../views/head %>
+  <script>
+    const roomName = "<%= roomName %>"
+  </script>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    #message-container {
+      width: 100%;
+      max-width: 1200px;
+      height: 450px;
+      overflow: auto;
+    }
+
+    #message-container div {
+      background-color: #CCC;
+      padding: 5px;
+    }
+
+    #message-container div:nth-child(2n) {
+      background-color: #FFF;
+    }
+
+    #send-container {
+      position: fixed;
+      bottom: 0;
+      max-width: 1200px;
+      width: 80%;
+      display: flex;
+    }
+
+    #message-input {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body class="container">
+
+  <header>
+    <% include ../views/header %>
+  </header>
+  <div>&nbsp;</div>
+  <!-- <div class="jumbotron"> -->
+    <form id="user-container">
+      <div class="form-group">
+        <label>Enter User Name </label>
+        <input type="text" id="user-input" class="form-control" name="username" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  <!-- </div> -->
+  <div id="message-container"></div>
+  <form id="send-container">
+    <!-- <input type="text" id="message-input" class="form-control" placeholder="message..">
+    <button type="submit" id="send-button" class="btn btn-primary" >Send</button> -->
+    <div class="input-group mb-3">
+      <input type="text" id="message-input" class="form-control" placeholder="message...">
+      <div class="input-group-append">
+        <button type="submit" id="send-button" class="btn btn-primary" >Send</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
