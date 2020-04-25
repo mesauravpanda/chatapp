@@ -47,21 +47,19 @@
     <% include ../views/header %>
   </header>
   <div>&nbsp;</div>
-  <!-- <div class="jumbotron"> -->
-    <form id="user-container">
+  <div class="jumbotron" id="user-container">
+    <form >
       <div class="form-group">
         <label>Enter User Name </label>
         <input type="text" id="user-input" class="form-control" name="username" required />
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-  <!-- </div> -->
+  </div>
   <div id="message-container"></div>
   <form id="send-container">
-    <!-- <input type="text" id="message-input" class="form-control" placeholder="message..">
-    <button type="submit" id="send-button" class="btn btn-primary" >Send</button> -->
     <div class="input-group mb-3">
-      <input type="text" id="message-input" class="form-control" placeholder="message...">
+      <input type="text" id="message-input" class="form-control" placeholder="message..." required>
       <div class="input-group-append">
         <button type="submit" id="send-button" class="btn btn-primary" >Send</button>
       </div>
